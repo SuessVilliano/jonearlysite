@@ -14,16 +14,15 @@
   <div class="bg-orb one"></div><div class="bg-orb two"></div>
   <header><a href="/" class="brand"><span>EA</span><div><strong>EARLY</strong><small>ADVISORY</small></div></a><a href="/" class="back">← Back to site</a></header>
   <main class="shell">
-    <section class="intro"><div class="eyebrow">EXECUTIVE STRATEGY SESSION</div><h1>Choose a time to get clear <em>early.</em></h1><p>60-minute private working session for a financial, operational, staffing, acquisition, or growth decision.</p></section>
+    <section class="intro"><div class="eyebrow">EXECUTIVE STRATEGY SESSION</div><h1>Choose a time to get clear <em>early.</em></h1><p>60-minute private working session for a financial, accounting, operational, acquisition, staffing, or growth decision.</p></section>
     <section class="booking-shell">
       <aside class="summary-card">
-        <div class="price">$350</div>
+        <div class="price">$600</div>
         <h2>Executive Strategy Session</h2>
         <p>Jonathan Early · Founder & Principal Advisor</p>
         <div class="facts"><div><span>◷</span><b>60 minutes</b></div><div><span>◉</span><b>Video call</b></div><div><span>▣</span><b>Eastern Time</b></div></div>
         <div class="selected" id="selectedSummary"><small>YOUR SELECTION</small><strong>Select a date and time</strong></div>
       </aside>
-
       <div class="scheduler">
         <div class="step-head"><span class="active">1</span><i></i><span>2</span><i></i><span>3</span></div>
         <div class="panel" id="calendarStep">
@@ -32,7 +31,6 @@
           <div class="calendar" id="calendar"></div>
           <div class="times-wrap" id="timesWrap"><h4 id="timesTitle">Select a date to view times</h4><div class="times" id="times"></div></div>
         </div>
-
         <form class="panel hidden" id="detailsStep">
           <div class="form-head"><button type="button" class="link-btn" id="backToCalendar">← Change time</button><h3>Your details</h3><p>Tell Jonathan what decision you want to work through.</p></div>
           <div class="form-grid">
@@ -44,14 +42,13 @@
             <label>Title / Role<input name="title" /></label>
             <label>Company revenue range<select name="revenue"><option value="">Select</option><option>Under $1M</option><option>$1M–$5M</option><option>$5M–$10M</option><option>$10M–$25M</option><option>$25M–$100M</option><option>$100M+</option></select></label>
             <label>Employee count<select name="employees"><option value="">Select</option><option>1–10</option><option>11–25</option><option>26–50</option><option>51–100</option><option>101–250</option><option>250+</option></select></label>
-            <label class="wide">What decision or challenge should we focus on?<textarea name="challenge" rows="5" required placeholder="Example: We are considering opening a second office and need to understand the financial and staffing implications."></textarea></label>
-            <label class="wide">Anything Jonathan should review before the call?<textarea name="context" rows="3" placeholder="Optional context, metrics, systems, or links."></textarea></label>
+            <label class="wide">What do you want to work through?<textarea name="challenge" rows="5" required placeholder="Example: We need cleaner financial reporting, we are evaluating an acquisition, or we are deciding whether to open a second office."></textarea></label>
+            <label class="wide">Anything Jonathan should review before the call?<textarea name="context" rows="3" placeholder="Optional context, metrics, systems, deal terms, or links."></textarea></label>
           </div>
-          <label class="consent"><input type="checkbox" name="consent" required /> <span>I agree to be contacted about this appointment and understand this is an advisory session, not legal, tax, investment, or engineering-design advice.</span></label>
+          <label class="consent"><input type="checkbox" name="consent" required /> <span>I agree to be contacted about this appointment and understand this is an advisory session. Regulated, licensed, tax, legal, attest, investment, or engineering-design services are only provided where appropriately qualified or through independent licensed professionals.</span></label>
           <button class="submit-btn" type="submit">Confirm Strategy Session <span>→</span></button>
           <p class="secure">Secure intake · Your information is only used to coordinate the session.</p>
         </form>
-
         <div class="panel hidden success" id="successStep">
           <div class="check">✓</div><div class="eyebrow">SESSION REQUESTED</div><h3>You’re on the calendar.</h3><p id="successText"></p>
           <div class="confirmation-card" id="confirmationCard"></div>
