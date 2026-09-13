@@ -68,3 +68,18 @@ if (portrait && !reduceMotion && finePointer) {
     portrait.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg)';
   });
 }
+
+// Mobile viewport + footer-stop hardening for iOS/Safari/Chrome.
+const mobileFixes = document.createElement('style');
+mobileFixes.textContent = `html,body{max-width:100%;overflow-x:hidden}body{min-height:100dvh;overscroll-behavior-y:none}main{display:block}footer{position:relative;z-index:2;margin-bottom:0;padding-bottom:max(18px,env(safe-area-inset-bottom))}@media(max-width:700px){.hero{min-height:auto;padding-top:118px;padding-bottom:48px}.hero-grid{grid-template-columns:1fr;gap:34px}.hero-visual{min-height:0}.portrait-frame{min-height:420px}.metric-float{display:none}.hero-rule{margin-top:42px}.section-pad{padding-top:72px;padding-bottom:72px}footer{min-height:0}.noise{display:none}}`;
+document.head.appendChild(mobileFixes);
+
+// Load shared concierge widget without requiring HTML template changes.
+const conciergeCss = document.createElement('link');
+conciergeCss.rel = 'stylesheet';
+conciergeCss.href = '/concierge.css';
+document.head.appendChild(conciergeCss);
+const conciergeScript = document.createElement('script');
+conciergeScript.src = '/concierge.js';
+conciergeScript.defer = true;
+document.body.appendChild(conciergeScript);
