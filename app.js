@@ -1,6 +1,7 @@
 const SITE_CONFIG = {
   ghlBookingUrl: "",
-  fallbackEmail: "hello@earlyadvisory.co"
+  fallbackEmail: "hello@earlyadvisory.co",
+  portraitUrl: "https://sdn2.signalhire.co/storage/profile/d925/ee55/5ad0/11e6/8155/feb7/9ce8/b6d8.webp"
 };
 
 const loader = document.getElementById('loader');
@@ -40,8 +41,13 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -30px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Use Jonathan's professional portrait while preserving a graceful initial-based fallback.
+const portraitStyle = document.createElement('style');
+portraitStyle.textContent = `.portrait-placeholder.has-photo{background-image:linear-gradient(180deg,rgba(7,17,31,.02),rgba(7,17,31,.18)),url('${SITE_CONFIG.portraitUrl}');background-size:cover;background-position:center 20%;}.portrait-placeholder.has-photo:before,.portrait-placeholder.has-photo:after{display:none}.portrait-placeholder.has-photo>span{display:none}.portrait-placeholder.large.has-photo{background-position:center top}`;
+document.head.appendChild(portraitStyle);
+document.querySelectorAll('.portrait-placeholder').forEach(el => el.classList.add('has-photo'));
 
 const bookingButton = document.getElementById('bookingButton');
 const bookingCard = bookingButton?.closest('.booking-card');
@@ -61,7 +67,6 @@ if (SITE_CONFIG.ghlBookingUrl) {
   if (bookingNote) bookingNote.textContent = 'GHL calendar is ready to connect as soon as the booking URL is added.';
 }
 
-// Subtle desktop parallax for the hero card; disabled on touch/reduced-motion devices.
 const portrait = document.querySelector('.portrait-frame');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer = window.matchMedia('(pointer: fine)').matches;
